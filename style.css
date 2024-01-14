@@ -1,0 +1,181 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Roboto, system-ui, "Segoe UI", Roboto, Helvetica, Arial,
+        sans-serif, "Apple Color Emoji", "Segoe UI", "Emoji", "Segoe UI Symbol";
+}
+
+body {
+    height: 100vh;
+    width: 100vw;
+}
+
+p {
+    width: 60ch;
+    font-size: 1em;
+    letter-spacing: 0.05em;
+    line-height: calc(1ex / 0.32);
+}
+
+button {
+    cursor: pointer;
+}
+
+.container {
+    display: grid;
+    height: 100vh;
+    grid-template: repeat(6, 1fr) 0.1fr / repeat(6, 1fr);
+    grid-template-areas:
+        "b-sidebar header header header header header"
+        "b-sidebar b-content b-content b-content b-content b-content"
+        "b-sidebar b-content b-content b-content b-content b-content"
+        "b-sidebar b-content b-content b-content b-content b-content"
+        "b-sidebar b-content b-content b-content b-content b-content"
+        "b-sidebar b-content b-content b-content b-content b-content"
+        "b-sidebar footer footer footer footer footer";
+}
+
+header {
+    padding: 10px 40px;
+    grid-area: header;
+    box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.3);
+}
+
+.upper-header > img {
+    height: 20px;
+}
+
+.upper-header {
+    align-items: center;
+    display: grid;
+    grid-template-columns: 0.3fr 5fr 0.3fr 0.5fr 1fr;
+}
+
+.upper-header > input {
+    width: 600px;
+    padding: 5px 10px;
+    font-size: 12px;
+    border-radius: 15px;
+    border: 1px solid rgba(0, 0, 0, 0.6);
+}
+
+.upper-header > div {
+    height: 40px;
+    width: 40px;
+    border-radius: 100%;
+    background-image: url("images/gecko.jpg");
+    background-position: bottom center;
+    background-size: cover;
+}
+
+.upper-header > h1 {
+    font-size: 16px;
+    font-weight: 500;
+    width: 130px;
+}
+
+.lower-header {
+    display: grid;
+    margin-top: 20px;
+    align-items: center;
+    grid-template-columns: 0.8fr 6fr 1fr 1fr 1fr;
+}
+
+.lower-header > div:nth-of-type(1) {
+    height: 60px;
+    width: 60px;
+    border-radius: 100%;
+    background-image: url("images/gecko.jpg");
+    background-position: bottom center;
+    background-size: cover;
+}
+
+.lower-header h2 {
+    font-size: 14px;
+    font-weight: 500;
+    color: rgba(0, 0, 0, 0.7);
+}
+
+.lower-header h1 {
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.lower-header > button {
+    width: 90px;
+    height: 35px;
+    border: 0;
+    border-radius: 15px;
+    background: #84d6ff;
+    color: rgba(0, 0, 0, 0.7);
+    font-weight: 500;
+    box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.2);
+    transition: box-shadow 0.3s;
+}
+
+.lower-header > button:hover {
+    box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.4);
+}
+
+.b-sidebar {
+    background: #84d6ff;
+    grid-area: b-sidebar;
+    display: grid;
+    grid-template-rows: 1fr 30px repeat(18, minmax(30px, 1fr));
+}
+
+.b-sidebar > div {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-areas: "img text . . . .";
+    justify-content: center;
+    align-items: center;
+    margin-left: 10px;
+}
+
+.b-sidebar > div:nth-child(1) {
+    margin-top: 20px;
+}
+
+.b-sidebar > div > img,
+.b-sidebar > div > h1 {
+    margin-right: 10px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.b-sidebar > div > img {
+    height: 20px;
+    margin: 0px 20px;
+    grid-area: img;
+}
+
+.b-sidebar > div > h1,
+.b-sidebar > div > h2 {
+    grid-area: text;
+    font-weight: 500;
+    color: rgba(0, 0, 0, 0.7);
+    cursor: pointer;
+}
+
+.b-sidebar > div > h2 {
+    font-size: 18px;
+}
+
+.b-sidebar .icon-dashboard {
+    height: 40px;
+    margin: 0px 10px;
+}
+
+.b-content {
+    background: rgba(128, 128, 128, 0.15);
+    grid-area: b-content;
+}
+
+footer {
+    background: rgba(128, 128, 128, 0.15);
+    display: grid;
+    grid-area: footer;
+    justify-items: center;
+}
