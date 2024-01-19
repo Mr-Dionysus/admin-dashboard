@@ -7,9 +7,7 @@
 }
 
 body {
-    height: auto;
     width: 100vw;
-    overflow-y: auto;
 }
 
 p {
@@ -19,13 +17,18 @@ p {
     line-height: calc(1ex / 0.32);
 }
 
-button {
+button,
+.upper-header > .icon-notifications,
+.upper-header > .icon-sm-profile,
+.lower-header > .icon-bg-profile,
+.b-sidebar > .sidebar-link {
     cursor: pointer;
 }
 
 .container {
     display: grid;
     height: auto;
+    overflow-x: hidden;
     grid-template: repeat(6, 1fr) 0.1fr / repeat(6, 1fr);
     grid-template-areas:
         "b-sidebar header header header header header"
@@ -38,20 +41,16 @@ button {
 }
 
 header {
-    height: auto;
-    padding: 10px 40px;
+    display: grid;
+    padding: 0px 40px 10px 40px;
     grid-area: header;
+    grid-template-rows: repeat(2, 1fr);
+    gap: 10px;
     box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.3);
 }
 
 .upper-header > img {
     height: 20px;
-}
-
-.upper-header > .icon-notifications,
-.upper-header > .icon-sm-profile,
-.lower-header > .icon-bg-profile {
-    cursor: pointer;
 }
 
 .upper-header > .icon-sm-profile,
@@ -63,9 +62,10 @@ header {
 .lower-header > .icon-bg-profile:hover {
     box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.4);
 }
+
 .upper-header {
-    align-items: center;
     display: grid;
+    align-items: center;
     grid-template-columns: 0.3fr 5fr 0.3fr 0.5fr 1fr;
     gap: 20px;
 }
@@ -73,62 +73,61 @@ header {
 .upper-header > input {
     max-width: 600px;
     padding: 5px 10px;
-    font-size: 12px;
-    border-radius: 15px;
+    font-size: 0.8rem;
     border: 1px solid rgba(0, 0, 0, 0.6);
+    border-radius: 15px;
 }
 
 .upper-header > div {
-    height: 40px;
     width: 40px;
+    height: 40px;
     border-radius: 100%;
     background-image: url("images/gecko.jpg");
-    background-position: bottom center;
     background-size: cover;
+    background-position: bottom center;
 }
 
 .upper-header > h1 {
-    font-size: 16px;
-    font-weight: 500;
     width: 130px;
+    font-size: 1.1rem;
+    font-weight: 500;
 }
 
 .lower-header {
     display: grid;
-    margin-top: 20px;
     align-items: center;
     grid-template-columns: 0.8fr 6fr 1fr 1fr 1fr;
     gap: 20px;
 }
 
 .lower-header > div:nth-of-type(1) {
-    height: 60px;
     width: 60px;
+    height: 60px;
     border-radius: 100%;
     background-image: url("images/gecko.jpg");
-    background-position: bottom center;
     background-size: cover;
+    background-position: bottom center;
 }
 
 .lower-header h2 {
-    font-size: 14px;
+    font-size: 0.9rem;
     font-weight: 500;
     color: rgba(0, 0, 0, 0.7);
 }
 
 .lower-header h1 {
-    font-size: 18px;
+    font-size: 1.1rem;
     font-weight: 500;
 }
 
 .lower-header > button {
-    font-size: 14px;
     width: 90px;
     height: 35px;
     border: 0;
     border-radius: 15px;
     background: #84d6ff;
     color: rgba(0, 0, 0, 0.7);
+    font-size: 0.9rem;
     font-weight: 500;
     box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.2);
     transition: box-shadow 0.3s;
@@ -139,29 +138,23 @@ header {
 }
 
 .b-sidebar {
+    display: grid;
     min-width: 190px;
     background: #84d6ff;
     grid-area: b-sidebar;
-    display: grid;
     grid-template-rows: 0.5fr 30px repeat(18, minmax(30px, 0.5fr));
 }
 
 .b-sidebar > div {
     display: grid;
     min-width: 140px;
-    grid-template-columns: repeat(6, 1fr);
-    grid-template-areas: "img text . . . .";
     justify-content: center;
     align-items: center;
-    margin-left: 10px;
+    margin: 5px;
     border-radius: 25px;
-    margin-right: 10px;
-    margin: 5px 10px 5px 5px;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-areas: "img text . . . .";
     transition: box-shadow 0.3s;
-}
-
-.b-sidebar > .sidebar-link {
-    cursor: pointer;
 }
 
 .b-sidebar > .sidebar-link:hover {
@@ -175,8 +168,7 @@ header {
 
 .b-sidebar > div > img,
 .b-sidebar > div > h1 {
-    margin-right: 10px;
-    font-size: 20px;
+    font-size: 1.2rem;
 }
 
 .b-sidebar > div > img {
@@ -187,13 +179,13 @@ header {
 
 .b-sidebar > div > h1,
 .b-sidebar > div > h2 {
-    grid-area: text;
     font-weight: 500;
     color: rgba(0, 0, 0, 0.7);
+    grid-area: text;
 }
 
 .b-sidebar > div > h2 {
-    font-size: 18px;
+    font-size: 1.1rem;
 }
 
 .b-sidebar .icon-dashboard {
@@ -202,29 +194,29 @@ header {
 }
 
 .b-content {
+    display: grid;
+    padding: 20px 0px 20px 20px;
     background: rgba(128, 128, 128, 0.1);
     grid-area: b-content;
-    display: grid;
     grid-template-columns: 3fr 1fr;
-    padding: 20px;
 }
 
 .left-content {
     display: grid;
+    padding-right: 20px;
     grid-template: 1fr repeat(3, 12fr) / repeat(2, 1fr);
     gap: 20px;
-    padding-right: 20px;
 }
 
 .project {
-    cursor: pointer;
-    border-radius: 15px;
-    background: white;
-    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.3);
-    border-left: #ffb703 solid 7px;
-    padding: 20px 15px 20px 15px;
     display: grid;
+    padding: 15px;
+    border-left: #ffb703 solid 7px;
+    border-radius: 15px;
+    cursor: pointer;
+    background: white;
     grid-template-rows: 0.7fr 4fr 1fr;
+    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.3);
     transition: box-shadow 0.3s;
 }
 
@@ -233,31 +225,29 @@ header {
 }
 
 .project h2 {
-    font-size: 16px;
+    font-size: 1rem;
     font-weight: 500;
 }
 
 .project > p {
     width: auto;
-    font-size: 15px;
-    color: rgba(128, 128, 128, 0.9);
+    font-size: 0.95rem;
     line-height: 115%;
+    color: rgba(128, 128, 128, 0.9);
 }
 
 .project .b-buttons {
-    margin-left: auto;
     display: grid;
-    gap: 20px;
     width: 100px;
-    margin-right: 10px;
-    margin-top: auto;
+    margin: 0px 10px 0px auto;
     grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
 }
 
 .project .b-buttons > img,
 .upper-header > .icon-notifications {
-    cursor: pointer;
     height: 22px;
+    cursor: pointer;
     transition: transform 0.3s;
 }
 
@@ -292,26 +282,20 @@ header {
     gap: 20px;
 }
 
-.right-content > .b-announcements > div {
-    height: -webkit-fit-content;
-    height: -moz-fit-content;
-    height: fit-content;
-}
-
 .b-announcement {
     cursor: pointer;
 }
 
 .right-content > .b-announcements h2 {
-    font-weight: 500;
-    font-size: 14px;
     margin-bottom: 3px;
+    font-size: 0.85rem;
+    font-weight: 500;
 }
 
 .right-content > .b-announcements p {
-    font-size: 13px;
-    line-height: 110%;
     width: auto;
+    font-size: 0.8rem;
+    line-height: 110%;
     color: rgba(128, 128, 128, 0.9);
 }
 
@@ -322,34 +306,34 @@ header {
 
 .right-content > .b-trending {
     display: grid;
-    grid-template: repeat(4, 1fr) / 1fr 2.5fr;
     padding: 20px;
+    grid-template: repeat(4, 1fr) / 1fr 2.5fr;
     gap: 5px;
 }
 
 .right-content > .b-trending span {
-    font-size: 14px;
+    font-size: 0.9rem;
 }
 
 .right-content > .b-trending p {
-    font-size: 14px;
+    font-size: 0.9rem;
     color: gray;
 }
 
 .profile-about {
-    max-width: 100px;
+    max-width: 150px;
 }
 
 .profile-gecko,
 .profile-cat,
 .profile-dog,
 .profile-elephant {
-    cursor: pointer;
-    height: 50px;
     width: 50px;
+    height: 50px;
     border-radius: 100%;
-    background-position: bottom center;
+    cursor: pointer;
     background-size: cover;
+    background-position: bottom center;
     transition: box-shadow 0.3s;
 }
 
@@ -361,7 +345,7 @@ header {
 }
 
 .profile-gecko {
-    background-image: url("images/gecko.jpg");
+    background-image: url(images/gecko.jpg);
 }
 
 .profile-cat {
@@ -377,9 +361,9 @@ header {
 }
 
 footer {
-    padding-bottom: 10px;
-    background: rgba(128, 128, 128, 0.1);
     display: grid;
-    grid-area: footer;
+    padding-bottom: 10px;
     justify-items: center;
+    background: rgba(128, 128, 128, 0.1);
+    grid-area: footer;
 }
