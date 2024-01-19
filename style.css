@@ -122,6 +122,7 @@ header {
 }
 
 .lower-header > button {
+    font-size: 14px;
     width: 90px;
     height: 35px;
     border: 0;
@@ -176,7 +177,6 @@ header {
 .b-sidebar > div > h1 {
     margin-right: 10px;
     font-size: 20px;
-    cursor: pointer;
 }
 
 .b-sidebar > div > img {
@@ -190,7 +190,6 @@ header {
     grid-area: text;
     font-weight: 500;
     color: rgba(0, 0, 0, 0.7);
-    cursor: pointer;
 }
 
 .b-sidebar > div > h2 {
@@ -226,6 +225,11 @@ header {
     padding: 20px 15px 20px 15px;
     display: grid;
     grid-template-rows: 0.7fr 4fr 1fr;
+    transition: box-shadow 0.3s;
+}
+
+.project:hover {
+    box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.4);
 }
 
 .project h2 {
