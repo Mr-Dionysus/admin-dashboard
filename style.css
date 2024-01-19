@@ -27,7 +27,7 @@ button,
 
 .container {
     display: grid;
-    height: auto;
+    min-height: 1200px;
     overflow-x: hidden;
     grid-template: repeat(6, 1fr) 0.1fr / repeat(6, 1fr);
     grid-template-areas:
@@ -210,7 +210,7 @@ header {
 
 .project {
     display: grid;
-    padding: 15px;
+    padding: 20px;
     border-left: #ffb703 solid 7px;
     border-radius: 15px;
     cursor: pointer;
