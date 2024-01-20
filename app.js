@@ -8,14 +8,14 @@ const bigProfile = document.querySelector(".icon-bg-profile");
 const hiThere = document.querySelector(".lower-header > div:nth-of-type(2)");
 
 switch (true) {
-    case window.innerWidth > "1132":
+    case window.innerWidth > "1284":
         iconNavbar.classList.add("not-visible");
         iconNavbarSidebar.classList.add("not-visible");
         sidebar.classList.remove("not-visible");
         sidebar.classList.add("navbar-visible");
         break;
 
-    case window.innerWidth <= "1132":
+    case window.innerWidth <= "1284":
         iconNavbar.classList.remove("not-visible");
         iconNavbarSidebar.classList.remove("not-visible");
         sidebar.classList.add("not-visible");
@@ -31,18 +31,26 @@ switch (true) {
 
 window.addEventListener("resize", () => {
     switch (true) {
-        case window.innerWidth > "1132":
+        case window.innerWidth > "1284":
             iconNavbar.classList.add("not-visible");
             iconNavbarSidebar.classList.add("not-visible");
             sidebar.classList.remove("not-visible");
             sidebar.classList.add("navbar-visible");
+
+            myName.classList.remove("not-visible");
+            bigProfile.classList.remove("not-visible");
+            hiThere.classList.remove("not-visible");
             break;
 
-        case window.innerWidth <= "1132":
+        case window.innerWidth <= "1284":
             iconNavbar.classList.remove("not-visible");
             iconNavbarSidebar.classList.remove("not-visible");
             sidebar.classList.add("not-visible");
             sidebar.classList.remove("navbar-visible");
+
+            myName.classList.remove("not-visible");
+            bigProfile.classList.remove("not-visible");
+            hiThere.classList.remove("not-visible");
 
             if (window.innerWidth <= "537") {
                 myName.classList.add("not-visible");
