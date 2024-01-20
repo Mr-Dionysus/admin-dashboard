@@ -8,6 +8,7 @@
 
 body {
     width: 100vw;
+    overflow-x: hidden;
 }
 
 p {
@@ -27,7 +28,8 @@ button,
 
 .container {
     display: grid;
-    min-height: 1200px;
+    height: 1400px;
+    min-height: 100vh;
     overflow-x: hidden;
     grid-template: repeat(6, 1fr) 0.1fr / repeat(6, 1fr);
     grid-template-areas:
@@ -66,8 +68,30 @@ header {
 .upper-header {
     display: grid;
     align-items: center;
-    grid-template-columns: 0.3fr 5fr 0.3fr 0.5fr 1fr;
+    grid-template-columns: 0px 0.3fr 5fr 0.3fr 0.5fr 1fr;
     gap: 20px;
+}
+
+.hidden-box {
+    width: 0px;
+    height: 0px;
+    overflow: visible;
+    z-index: 1;
+    transition: opacity 0.3s;
+}
+
+.not-visible {
+    transform: scale(0);
+    height: 0px;
+    width: 0px;
+    margin: 0;
+    padding: 0;
+    opacity: 0;
+}
+
+.not-visible * {
+    margin: 0;
+    padding: 0;
 }
 
 .upper-header > input {
@@ -143,6 +167,7 @@ header {
     background: #84d6ff;
     grid-area: b-sidebar;
     grid-template-rows: 0.5fr 30px repeat(18, minmax(30px, 0.5fr));
+    transition: opacity 0.3s;
 }
 
 .b-sidebar > div {
@@ -232,7 +257,6 @@ header {
 .project > p {
     width: auto;
     font-size: 0.95rem;
-    line-height: 115%;
     color: rgba(128, 128, 128, 0.9);
 }
 
@@ -295,7 +319,6 @@ header {
 .right-content > .b-announcements p {
     width: auto;
     font-size: 0.8rem;
-    line-height: 110%;
     color: rgba(128, 128, 128, 0.9);
 }
 
@@ -366,4 +389,144 @@ footer {
     justify-items: center;
     background: rgba(128, 128, 128, 0.1);
     grid-area: footer;
+}
+
+@media (max-width: 1132px) {
+    .upper-header .icon-navbar {
+        height: 40px;
+    }
+
+    .navbar-visible .icon-navbar {
+        grid-area: icon-navbar;
+        height: 40px;
+        margin: 0px 15px 0px 0px;
+    }
+
+    .upper-header {
+        grid-template-columns: 0.6fr 0.3fr 5fr 0.3fr 0.5fr 1fr;
+    }
+
+    .b-sidebar {
+        grid-column: 1 / 1;
+    }
+
+    .left-content {
+        grid-template: 1fr repeat(6, 12fr) / 1fr;
+    }
+
+    .right-content {
+        grid-template: 1fr 35.5fr 1fr 35.5fr / 1fr;
+    }
+
+    .left-content > h1 {
+        grid-column: 1 / 2;
+    }
+
+    .right-content .b-announcement h2 {
+        font-size: 1.1rem;
+    }
+
+    .right-content .b-announcement h2 {
+        margin-bottom: 10px;
+    }
+
+    .right-content .b-announcement p {
+        font-size: 1rem;
+    }
+
+    .right-content .b-trending {
+        grid-template: 0.5fr 1fr 0.5fr 1fr 0.5fr 1fr 0.5fr 1fr / 1fr;
+        justify-content: center;
+        justify-items: center;
+    }
+
+    .profile-gecko,
+    .profile-cat,
+    .profile-dog,
+    .profile-elephant {
+        height: 70px;
+        width: 70px;
+        margin-bottom: 5px;
+    }
+
+    .right-content .b-trending span {
+        font-size: 1.2rem;
+    }
+
+    .right-content .b-trending p {
+        width: auto;
+        font-size: 1.1rem;
+        text-align: center;
+        margin-top: 10px;
+    }
+
+    .project h2 {
+        font-size: 1.2rem;
+    }
+
+    .project p {
+        font-size: 1.1rem;
+    }
+
+    .container {
+        height: 2200px;
+        grid-template-areas:
+            "header header header header header header"
+            "b-content b-content b-content b-content b-content b-content"
+            "b-content b-content b-content b-content b-content b-content"
+            "b-content b-content b-content b-content b-content b-content"
+            "b-content b-content b-content b-content b-content b-content"
+            "b-content b-content b-content b-content b-content b-content"
+            "footer footer footer footer footer footer";
+    }
+
+    .navbar-visible {
+        height: 100vh;
+        width: 30vw;
+        position: fixed;
+        grid-template-rows: 0.5fr 30px repeat(18, minmax(50px, 0.5fr));
+        gap: 5px;
+        align-items: center;
+    }
+
+    .navbar-visible > div {
+        grid-template-areas: ". img text .";
+        grid-template-columns: 0.5fr 0.5fr 6.5fr 1fr;
+        margin: 0px;
+    }
+
+    .navbar-visible > div:nth-of-type(1) > h1 {
+        font-size: 1.5rem;
+        grid-template-areas: "icon-navbar img text .";
+    }
+
+    .navbar-visible > div:nth-of-type(1) {
+        grid-template-areas: ". img text icon-navbar";
+        margin-left: 10px;
+    }
+
+    .navbar-visible .icon-dashboard {
+        height: 60px;
+    }
+
+    .navbar-visible > .sidebar-link {
+        min-height: 30px;
+        min-width: 230.188px;
+    }
+
+    .navbar-visible > .sidebar-link > img {
+        height: 30px;
+    }
+
+    .navbar-visible > .sidebar-link > h2 {
+        font-size: 1.3rem;
+        margin: 10px;
+    }
+
+    .lower-header button {
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 942px) {
 }
