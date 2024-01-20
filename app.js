@@ -43,6 +43,12 @@ window.addEventListener("resize", () => {
             iconNavbarSidebar.classList.remove("not-visible");
             sidebar.classList.add("not-visible");
             sidebar.classList.remove("navbar-visible");
+
+            if (window.innerWidth <= "537") {
+                myName.classList.add("not-visible");
+                bigProfile.classList.add("not-visible");
+                hiThere.classList.add("not-visible");
+            }
             break;
     }
 });
