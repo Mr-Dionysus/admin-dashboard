@@ -98,8 +98,14 @@ header {
     max-width: 600px;
     padding: 5px 10px;
     font-size: 0.8rem;
-    border: 2px solid rgba(0, 0, 0, 0.5);
+    background: #ffb80316;
+    border: 1px solid #ffb703;
     border-radius: 15px;
+}
+
+.upper-header > input:focus {
+    border: 2px solid #ffb703;
+    outline: 0px;
 }
 
 .upper-header > input::-webkit-input-placeholder {
