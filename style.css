@@ -98,7 +98,7 @@ header {
     max-width: 600px;
     padding: 5px 10px;
     font-size: 0.8rem;
-    border: 1px solid rgba(0, 0, 0, 0.6);
+    border: 2px solid rgba(0, 0, 0, 0.5);
     border-radius: 15px;
 }
 
@@ -170,11 +170,11 @@ header {
     height: 40px;
     border: 0;
     border-radius: 15px;
-    background: rgb(158, 223, 255);
+    background: white;
     color: rgba(0, 0, 0, 0.7);
     font-size: 1rem;
     font-weight: 600;
-    box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.3);
     transition: box-shadow 0.3s;
 }
 
@@ -185,7 +185,7 @@ header {
 .b-sidebar {
     display: grid;
     min-width: 190px;
-    background: rgb(158, 223, 255);
+    background: white;
     grid-area: b-sidebar;
     grid-template-rows: 0.5fr 30px repeat(18, minmax(30px, 0.5fr));
     transition: opacity 0.3s;
@@ -241,7 +241,7 @@ header {
 .b-content {
     display: grid;
     padding: 20px 0px 20px 20px;
-    background: rgba(128, 128, 128, 0.1);
+    background: #ffb80316;
     grid-area: b-content;
     grid-template-columns: 3fr 1fr;
 }
@@ -390,7 +390,7 @@ header {
 .profile-cat:hover,
 .profile-dog:hover,
 .profile-elephant:hover {
-    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.4);
+    box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.5);
 }
 
 .profile-gecko {
@@ -413,7 +413,7 @@ footer {
     display: grid;
     padding-bottom: 10px;
     justify-items: center;
-    background: rgba(128, 128, 128, 0.1);
+    background: #ffb80316;
     grid-area: footer;
 }
 
@@ -512,6 +512,7 @@ footer {
         grid-template-rows: 0.5fr 30px repeat(18, minmax(50px, 0.5fr));
         gap: 5px;
         align-items: center;
+        box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.5);
     }
 
     .navbar-visible > div {
