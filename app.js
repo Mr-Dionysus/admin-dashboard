@@ -3,6 +3,10 @@ const iconNavbar = document.querySelector(".icon-navbar");
 const iconNavbarSidebar = document.querySelector(".b-sidebar .icon-navbar");
 const body = document.querySelector("body");
 
+const myName = document.querySelector(".upper-header > h1");
+const bigProfile = document.querySelector(".icon-bg-profile");
+const hiThere = document.querySelector(".lower-header > div:nth-of-type(2)");
+
 switch (true) {
     case window.innerWidth > "1132":
         iconNavbar.classList.add("not-visible");
@@ -16,6 +20,12 @@ switch (true) {
         iconNavbarSidebar.classList.remove("not-visible");
         sidebar.classList.add("not-visible");
         sidebar.classList.remove("navbar-visible");
+
+        if (window.innerWidth <= "537") {
+            myName.classList.add("not-visible");
+            bigProfile.classList.add("not-visible");
+            hiThere.classList.add("not-visible");
+        }
         break;
 }
 

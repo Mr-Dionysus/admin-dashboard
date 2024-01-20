@@ -491,7 +491,7 @@ footer {
 
     .navbar-visible > div {
         grid-template-areas: ". img text .";
-        grid-template-columns: 0.5fr 0.5fr 6.5fr 1fr;
+        grid-template-columns: 0.5fr 0.5fr 6fr 1fr;
         margin: 0px;
     }
 
@@ -529,4 +529,100 @@ footer {
 }
 
 @media (max-width: 942px) {
+    .navbar-visible > div:nth-of-type(1) {
+        margin: 10px 10px 0px 5vw;
+    }
+
+    .navbar-visible > div:nth-of-type(1) h1 {
+        font-size: 1.2rem;
+    }
+
+    .navbar-visible > div:nth-of-type(1) img {
+        margin-left: 15px;
+        height: 40px;
+    }
+
+    .navbar-visible > .sidebar-link > h2 {
+        font-size: 1.1rem;
+        margin: 10px 0px;
+    }
+
+    .navbar-visible {
+        width: 50vw;
+    }
+
+    .navbar-visible > .sidebar-link {
+        margin: 10px 5vw;
+    }
+
+    .b-content {
+        grid-template: repeat(2, 1fr) / 1fr;
+        padding: 30px 10%;
+    }
+
+    .container {
+        grid-template-areas:
+            "header header header header header header"
+            "b-content b-content b-content b-content b-content b-content"
+            "footer footer footer footer footer footer";
+        grid-template-rows: 1fr 20fr 1fr;
+    }
+
+    .left-content {
+        padding-right: 0px;
+    }
+
+    .right-content > h1:nth-of-type(1) {
+        margin-top: 15px;
+    }
+
+    .right-content .b-announcement h2 {
+        font-size: 1.3rem;
+    }
+
+    .right-content .b-announcement p {
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 576px) {
+    header {
+        padding: 0px 10px 10px 10px;
+    }
+}
+
+@media (max-width: 537px) {
+    .upper-header {
+        gap: 10px;
+        grid-template-columns: 5fr 5fr 10fr 5fr 5fr 0px;
+    }
+
+    .lower-header {
+        gap: 0px;
+        grid-template-columns: 0px 0px repeat(3, 1fr);
+        justify-items: center;
+    }
+    .project {
+        grid-template-rows: 0.7fr 4fr 0.2fr;
+    }
+
+    .navbar-visible {
+        width: 70vw;
+    }
+    .navbar-visible > div:nth-of-type(1) {
+        margin: 10px 0px 0px 0px;
+    }
+
+    .navbar-visible > div > img.icon-dashboard {
+        margin-left: 0px;
+    }
+
+    .navbar-visible > div > img {
+        margin: 0px 10px 0px 0px;
+    }
+
+    .navbar-visible > .sidebar-link {
+        margin: 10px 20vw 10px 2vw;
+        min-width: 100px;
+    }
 }
