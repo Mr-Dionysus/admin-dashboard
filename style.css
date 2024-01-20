@@ -195,6 +195,7 @@ header {
     grid-area: b-sidebar;
     grid-template-rows: 0.5fr 30px repeat(18, minmax(30px, 0.5fr));
     transition: opacity 0.3s;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.2);
 }
 
 .b-sidebar > div {
